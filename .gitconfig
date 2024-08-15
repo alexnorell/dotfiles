@@ -1,0 +1,15 @@
+[user]
+	name = Alex Norell
+	email = alex@norell.co
+	signingkey = F52BA161D0B04D4D6033F41BE4380C50A72281A6
+[alias]
+	dtf = !git --git-dir=$HOME/.dotfiles --work-tree=$HOME
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+[push]
+	autoSetupRemote = true
+	autoSetupRemote = true
+[init]
+	defaultBranch = main
