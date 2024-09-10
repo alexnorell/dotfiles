@@ -1,0 +1,9 @@
+{
+	"theme": "auto",
+	"color_scheme": "Dracula Pro.sublime-color-scheme",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"index_files": true,
+}

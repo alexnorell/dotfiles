@@ -1,0 +1,59 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `zed: Open Default Settings` command
+// from the command palette
+{
+  "telemetry": {
+    "metrics": false
+  },
+  "vim_mode": false,
+  "ui_font_size": 16,
+  "buffer_font_family": "CaskaydiaCove Nerd Font Mono",
+  "buffer_font_size": 14,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Dracula"
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "wrap_guides": [100],
+
+  "buffer_line_height": "standard",
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": true
+  },
+  "tabs": {
+    "close_position": "right",
+    "file_icons": false,
+    "git_status": true
+  },
+  "project_panel": {
+    "button": true,
+    "default_width": 240,
+    "dock": "left",
+    "file_icons": true,
+    "folder_icons": true,
+    "git_status": true,
+    "indent_size": 20,
+    "auto_fold_dirs": false,
+    "auto_reveal_entries": true,
+    "scrollbar": {
+      "show": "always"
+    }
+  },
+  "features": {
+    "inline_completion_provider": "supermaven"
+  },
+  "terminal": {
+    "font_family": "CaskaydiaCove Nerd Font Mono"
+  }
+}
