@@ -1,4 +1,5 @@
 {
     "theme": "Dracula Pro.sublime-theme",
 	"auto_fetch_delay": 5,
+	"git_binary": "/opt/homebrew/bin/git",
 }

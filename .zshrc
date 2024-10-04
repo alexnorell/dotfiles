@@ -59,5 +59,31 @@ if command -v lsd &> /dev/null; then
     alias ls='lsd'
 fi
 
+if command -v vim &> /dev/null; then
+    export EDITOR="vim"
+fi
+
+if command -v pyenv &> /dev/null; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+fi
+
+if command -v poetry &> /dev/null; then
+    fpath+=~/.zfunc
+    autoload -Uz compinit && compinit
+fi
+
+alias gcam="git commit -am"
+alias gur='
+    upstream=$(git branch -r | grep -E "origin/(main|master)" | head -n 1 | sed "s|origin/||");
+    if [ -z "$upstream" ]; then
+        echo "No upstream main or master branch found!";
+    else
+        git fetch origin && git rebase origin/$upstream;
+    fi'
+alias pro="git push && gh pr create --web"
+alias prv="gh pr view"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

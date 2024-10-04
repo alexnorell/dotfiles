@@ -6,6 +6,8 @@ fi
 brew install \
     arc \
     awscli \
+    axel \
+    balena-etcher \
     bartender \
     brave-browser \
     bruno \
@@ -40,8 +42,10 @@ brew install \
     rectangle-pro \
     rsync \
     slack\
+    spacelift-io\spacelift\spacectl \
     sublime-merge \
     sublime-text \
+    tuple \
     visual-studio-code \
     vlc \
     wget \
@@ -54,3 +58,5 @@ brew install \
 
 brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
+
+pipx install poetry
