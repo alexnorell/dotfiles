@@ -7,6 +7,15 @@
 // custom settings, run the `zed: Open Default Settings` command
 // from the command palette
 {
+  "languages": {
+    "JSON": {
+      "show_edit_predictions": false
+    },
+    "TOML": {
+      "show_edit_predictions": true
+    }
+  },
+  "show_edit_predictions": true,
   "telemetry": {
     "metrics": false
   },
@@ -50,10 +59,13 @@
       "show": "always"
     }
   },
-  "features": {
-    "inline_completion_provider": "supermaven"
-  },
   "terminal": {
     "font_family": "CaskaydiaCove Nerd Font Mono"
-  }
+  },
+  "file_types": {
+    "Dockerfile": ["Dockerfile*"]
+  },
+  "remove_trailing_whitespace_on_save": true,
+  "format_on_save": "on",
+  "ensure_final_newline_on_save": true
 }

@@ -31,9 +31,12 @@ case "$OSTYPE" in
         if test -f "$autosuggestions"; then
             source "$autosuggestions"
         fi
-        powerlevel10k="$(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme"
-        if test -f "$powerlevel10k"; then
-            source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+        if [[ $- == *i* ]]; then
+            powerlevel10k="$(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme"
+            if test -f "$powerlevel10k"; then
+                source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+                [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+            fi
         fi
     ;;
 esac
@@ -46,8 +49,8 @@ fi
 
 if command -v zoxide &> /dev/null; then
     eval "$(zoxide init zsh)"
-    # Alias cd to zoxide
-    alias cd='z'
+    # Alias cd to zoxide (interactive shells only)
+    [[ $- == *i* ]] && alias cd='z'
 fi
 
 if command -v fzf &> /dev/null; then
@@ -55,8 +58,13 @@ if command -v fzf &> /dev/null; then
 fi
 
 if command -v lsd &> /dev/null; then
-    # Alias ls to lsd
-    alias ls='lsd'
+    # Alias ls to lsd (interactive shells only)
+    [[ $- == *i* ]] && alias ls='lsd'
+fi
+
+if command -v dust &> /dev/null; then
+    # Alias du to dust (interactive shells only)
+    [[ $- == *i* ]] && alias du='dust'
 fi
 
 if command -v vim &> /dev/null; then
@@ -67,12 +75,14 @@ if command -v pyenv &> /dev/null; then
     export PYENV_ROOT="$HOME/.pyenv"
     [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
+    # eval "$(pyenv virtualenv-init -)"
 fi
 
 if command -v poetry &> /dev/null; then
     fpath+=~/.zfunc
     autoload -Uz compinit && compinit
 fi
+
 
 alias gcam="git commit -am"
 alias gur='
@@ -85,5 +95,7 @@ alias gur='
 alias pro="git push && gh pr create --web"
 alias prv="gh pr view"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+alias dangerzone="claude --dangerously-skip-permissions --append-system-prompt='when using git or gh, dont reference claude'"
+
+
+export PATH="/Users/anorell/.cargo/bin:$PATH"

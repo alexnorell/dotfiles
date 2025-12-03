@@ -6,7 +6,9 @@
 	"installed_packages":
 	[
 		"DiffTabs",
+		"GitHub Flavored Markdown Preview",
 		"isort",
+		"Logs Colorize",
 		"Package Control",
 		"poetry",
 		"Pretty JSON",

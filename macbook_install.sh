@@ -3,49 +3,59 @@ if ! command -v brew &> /dev/null; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-brew install \
-    arc \
+brew reinstall \
     awscli \
     axel \
-    balena-etcher \
+    balenaetcher \
     bartender \
     brave-browser \
     bruno \
     btop \
-    coreutils \
+    claude-code \
     coreutils \
     curl \
-    discord \
+    legcord \
     dive \
     font-caskaydia-cove-nerd-font \
+    ffmpeg \
     fzf \
+    gemini-cli \
     gh \
     git \
+    gitingest \
     gnupg \
+    go \
+    goimports \
+    golangci-lint \
     google-chrome \
-    google-cloud-sdk \
     google-cloud-sdk \
     hex-fiend \
     hugo \
     imagemagick \
     iterm2 \
     lsd \
+    dust \
     mkcert \
+    n \
     nmap \
     opentofu \
     orbstack \
     pinentry-mac \
     pipx \
     powerlevel10k \
+    prettier \
     pyenv \
     python@3.12 \
     rectangle-pro \
     rsync \
-    slack\
-    spacelift-io\spacelift\spacectl \
+    rust \
+    slack \
     sublime-merge \
     sublime-text \
+    tio \
+    tree \
     tuple \
+    uv \
     visual-studio-code \
     vlc \
     wget \
@@ -55,8 +65,3 @@ brew install \
     zoom \
     zoxide \
     zsh-autosuggestions \
-
-brew tap hashicorp/tap
-brew install hashicorp/tap/terraform
-
-pipx install poetry
