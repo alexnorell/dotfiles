@@ -1,7 +1,7 @@
 [user]
 	name = Alex Norell
 	email = alex@norell.co
-	signingkey = F52BA161D0B04D4D6033F41BE4380C50A72281A6
+	signingkey = 2F82120011961CD4ED4CAD4FF1A27C5174A1B06B
 [alias]
 	dtf = !git --git-dir=$HOME/.dotfiles --work-tree=$HOME
 [commit]
@@ -13,3 +13,10 @@
 	autoSetupRemote = true
 [init]
 	defaultBranch = main
+[credential]
+	helper = osxkeychain
+[gpg]
+	program = /opt/homebrew/bin/gpg
+[core]
+	excludefile = /Users/anorell/.gitignore_global
+	excludesfile = /Users/anorell/.gitignore_global
